@@ -4,7 +4,7 @@
 
         <div class="row text-center text-md-start">
 
-            <!-- IZQUIERDA -->
+
             <div class="col-md-4 mb-3">
                 <h5 class="fw-bold">🎮 GameForge</h5>
                 <p class="small">
@@ -12,7 +12,7 @@
                 </p>
             </div>
 
-            <!-- CENTRO -->
+      
             <div class="col-md-4 mb-3">
                 <h6 class="fw-bold">Navegación</h6>
                 <ul class="list-unstyled">
@@ -22,7 +22,7 @@
                 </ul>
             </div>
 
-            <!-- DERECHA -->
+
             <div class="col-md-4 mb-3">
                 <h6 class="fw-bold">Sobre la app</h6>
                 <p class="small">
@@ -34,7 +34,7 @@
 
         <hr class="footer-line">
 
-        <!-- ABAJO -->
+
         <div class="text-center small">
             © 2026 - GameForge 🎮 | Todos los derechos reservados
         </div>

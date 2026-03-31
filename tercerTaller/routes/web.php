@@ -7,7 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PersonajeController;
 
 
-// Inicio
+    // ==================================================================
 Route::get('/', [PageController::class, 'inicio'])->name('inicio');
 
 
@@ -18,17 +18,23 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/registro', [AuthController::class, 'showRegister'])->name('registro');
 Route::post('/registro', [AuthController::class, 'register'])->name('registro.post');
 
-// Personajes
-// Personajes (solo para usuarios logueados)
-// Personajes (solo para usuarios logueados)
+    // ==================================================================
+
 Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
+
     Route::get('/mis-personajes', [PersonajeController::class, 'index'])->name('mis.personajes');
+
+
     Route::get('/nuevo-personaje', [PersonajeController::class, 'create'])->name('nuevo.personaje');
 
-    // NUEVA RUTA POST para guardar personajes
-    Route::post('/nuevo-personaje', [PersonajeController::class, 'store'])->name('guardar.personaje');
+
+    Route::post('/nuevo-personaje', [PersonajeController::class, 'store'])->name('nuevo.personaje.store');
+
 
     Route::get('/mostrar-registros', [PersonajeController::class, 'registros'])->name('mostrar.registros');
+});
+
 });
 Route::post('/logout', function() {
     Auth::logout();

@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->string('clase');
             $table->string('raza');
             $table->integer('estatura')->nullable();
-            $table->json('habilidades')->nullable(); // PostgreSQL soporta JSON nativo
+            $table->json('habilidades')->nullable();
             $table->text('historia')->nullable();
             $table->timestamps();
         });

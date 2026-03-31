@@ -2,13 +2,15 @@
 
 @section('contenido')
 
-<!-- HERO -->
+
+
 <div class="hero text-center text-light p-5 rounded-4 shadow-lg mb-5">
     <h1 class="display-3 fw-bold glow-text">🎮 CREA TU PERSONAJE</h1>
     <p class="lead">Diseña héroes, villanos y leyendas únicas</p>
 </div>
 
-<!-- CARDS -->
+
+
 <div class="row g-4 mb-5">
 
     <div class="col-md-4">
@@ -42,10 +44,11 @@
 
 <div class="row align-items-stretch mb-5 gy-5">
 
-    <!-- SECCIÓN CON IMAGEN + INFO -->
-<div class="row align-items-stretch mb-5 gy-5" style="min-height: 750px;"> <!-- altura mínima igual a la imagen -->
 
-    <!-- IZQUIERDA -->
+
+<div class="row align-items-stretch mb-5 gy-5" style="min-height: 750px;">
+
+
     <div class="col-md-6 text-light d-flex flex-column justify-content-between">
         <h2 class="fw-bold mb-3">Crea sin límites</h2>
 
@@ -54,14 +57,14 @@
             Dale vida a tus ideas y conviértelas en personajes increíbles.
         </p>
 
-        <!-- LISTA -->
+        
         <ul class="list-group mb-4">
             <li class="list-group-item bg-dark text-light border-secondary">✔ Fácil de usar</li>
             <li class="list-group-item bg-dark text-light border-secondary">✔ Diseño moderno</li>
             <li class="list-group-item bg-dark text-light border-secondary">✔ Experiencia fluida</li>
         </ul>
 
-        <!-- PROCESO -->
+        
         <div class="mt-4">
             <h5 class="fw-bold mb-3">¿Cómo funciona?</h5>
 
@@ -104,7 +107,7 @@
         </div>
     </div>
 
-    <!-- DERECHA (IMAGEN) -->
+
     <div class="col-md-6 text-center d-flex align-items-center justify-content-center" style="margin-right: -50px;">
     <img src="{{ asset('img/presentacion.jpg') }}"
          class="img-fluid hero-img"

@@ -8,13 +8,15 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    // Mostrar login
+    // ==================================================================
+
     public function showLogin()
     {
-        return view('pages.iniciarSesion'); // tu blade login
+        return view('pages.iniciarSesion'); 
     }
 
-    // Procesar login
+    // ==================================================================
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -32,20 +34,29 @@ class AuthController extends Controller
         ]);
     }
 
-    // Mostrar registro
+    // ==================================================================
+
     public function showRegister()
     {
-        return view('pages.registrarse'); // tu blade registrarse
+        return view('pages.registrarse'); 
     }
 
-    // Procesar registro
+    // ==================================================================
+
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => ['required','string','max:255'],
-            'email' => ['required','email','unique:users,email'],
-            'password' => ['required','confirmed','min:6'],
-        ]);
+       $request->validate([
+    'name' => [
+        'required',
+        'string',
+        'max:255',
+        'regex:/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/'
+    ],
+    'email' => ['required','email','unique:users,email'],
+    'password' => ['required','confirmed','min:6'],
+], [
+    'name.regex' => 'El nombre solo puede contener letras y espacios.'
+]);
 
         User::create([
             'name' => $request->name,

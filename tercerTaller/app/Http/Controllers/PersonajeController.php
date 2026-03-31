@@ -4,49 +4,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Personaje;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
 class PersonajeController extends Controller
 {
+    // ==================================================================
     public function index()
     {
-        $personajes = auth()->user()->personajes; // Trae los personajes del usuario logueado
+        $personajes = Auth::user()->personajes()->get();
         return view('pages.misPersonajes', compact('personajes'));
     }
 
+    // ==================================================================
     public function create()
     {
         return view('pages.nuevoPersonaje');
     }
 
+    // ==================================================================
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'clase' => 'required|string',
-            'raza' => 'required|string',
-            'estatura' => 'nullable|integer',
-            'habilidades' => 'nullable|array|max:3',
-            'historia' => 'required|string',
+        $validated = $request->validate([
+            'nombre' => 'required|string|max:50',
+            'clase' => 'required|string|in:Guerrero,Mago,Arquero,Asesino,Sanador',
+            'raza' => 'required|string|in:Humano,Elfo,Enano,Orco,Goblin',
+            'estatura' => 'required|integer|min:50|max:300',
+            'habilidades' => 'required|array|min:1|max:3',
+            'habilidades.*' => 'string|in:Fuerza,Magia,Sigilo,Arquería',
+            'historia' => 'required|string|max:1000',
         ]);
 
         Personaje::create([
-            'user_id' => auth()->id(),
-            'nombre' => $request->nombre,
-            'clase' => $request->clase,
-            'raza' => $request->raza,
-            'estatura' => $request->estatura,
-            'habilidades' => $request->habilidades,
-            'historia' => $request->historia,
+            'user_id' => Auth::id(),
+            'nombre' => $validated['nombre'],
+            'clase' => $validated['clase'],
+            'raza' => $validated['raza'],
+            'estatura' => $validated['estatura'],
+            'habilidades' => $validated['habilidades'],
+            'historia' => $validated['historia'],
         ]);
 
-        return redirect()->route('mis.personajes')->with('success', '¡Personaje creado!');
+        return redirect()->route('mis.personajes')->with('success', 'Personaje creado correctamente.');
     }
 
     public function registros()
-    {
-        $usuarios = User::all();
-        return view('pages.mostrarRegistros', compact('usuarios'));
-    }
+{
+    $usuarios = \App\Models\User::all(); // Trae todos los usuarios
+    return view('pages.mostrarRegistros', compact('usuarios'));
+}
 }

@@ -4,17 +4,20 @@
 
 <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
 
-    <!-- REGISTER CARD -->
+  
+
     <div class="col-md-6 col-lg-4">
         <div class="card gamer-card shadow-lg p-4 rounded-4 bg-dark text-light">
 
-            <!-- HEADER -->
+   
+
             <div class="text-center mb-3">
                 <h2 class="fw-bold glow-text">📝 Registrarse</h2>
                 <p class="small text-secondary">Crea tu cuenta y empieza a diseñar personajes</p>
             </div>
 
-            <!-- FORM -->
+
+
             <form method="POST" action="{{ route('registro.post') }}">
                 @csrf
 
@@ -33,7 +36,8 @@
                     @enderror
                 </div>
 
-                <!-- EMAIL -->
+
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo</label>
                     <input type="email"
@@ -48,7 +52,8 @@
                     @enderror
                 </div>
 
-                <!-- PASSWORD -->
+
+
                 <div class="mb-3">
                     <label for="password" class="form-label">Contraseña</label>
                     <input type="password"
@@ -62,7 +67,8 @@
                     @enderror
                 </div>
 
-                <!-- PASSWORD CONFIRM -->
+
+
                 <div class="mb-3">
                     <label for="password_confirmation" class="form-label">Confirmar Contraseña</label>
                     <input type="password"
@@ -73,14 +79,16 @@
                            placeholder="••••••••">
                 </div>
 
-                <!-- BUTTON -->
+
+
                 <div class="d-grid mb-3">
                     <button type="submit" class="btn btn-primary fw-bold">
                         Registrarse
                     </button>
                 </div>
 
-                <!-- LOGIN LINK -->
+
+
                 <p class="text-center text-secondary small">
                     ¿Ya tienes cuenta? 
                     <a href="{{ route('login') }}" class="text-primary fw-bold">Inicia sesión</a>

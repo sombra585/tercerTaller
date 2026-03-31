@@ -2,18 +2,28 @@
 
 @section('contenido')
 
-<!-- HERO -->
+
 <div class="hero text-center text-light p-5 rounded-4 shadow-lg mb-5">
     <h1 class="display-3 fw-bold glow-text">🎮 CREA TU PERSONAJE</h1>
     <p class="lead">Diseña héroes, villanos y leyendas únicas</p>
 </div>
 
-<form method="POST" action="{{ route('nuevo.personaje') }}">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+<form method="POST" action="{{ route('nuevo.personaje.store') }}">
     @csrf
 
     <div class="row g-4">
 
-        <!-- INFORMACIÓN BÁSICA -->
+  
         <div class="col-md-6">
             <div class="card gamer-card h-100 p-4">
                 <h4 class="fw-bold mb-3 glow-text">📝 Información Básica</h4>
@@ -50,7 +60,7 @@
             </div>
         </div>
 
-        <!-- APARIENCIA -->
+    
         <div class="col-md-6">
             <div class="card gamer-card h-100 p-4">
                 <h4 class="fw-bold mb-3 glow-text">🎨 Apariencia</h4>
@@ -73,7 +83,7 @@
             </div>
         </div>
 
-        <!-- HABILIDADES -->
+       
         <div class="col-12">
             <div class="card gamer-card p-4">
                 <h4 class="fw-bold mb-3 glow-text">⚡ Habilidades (Máximo 3)</h4>
@@ -99,7 +109,7 @@
             </div>
         </div>
 
-        <!-- HISTORIA -->
+     
         <div class="col-12">
             <div class="card gamer-card p-4">
                 <h4 class="fw-bold mb-3 glow-text">📖 Historia del personaje</h4>
@@ -107,7 +117,7 @@
             </div>
         </div>
 
-        <!-- BOTÓN GUARDAR -->
+  
         <div class="col-12 text-center">
             <button type="submit" class="btn btn-gradient btn-lg fw-bold mt-3 px-5 glow-btn">
                 💾 Guardar Personaje

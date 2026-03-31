@@ -72,7 +72,7 @@
     color: white;
 }
 
-/* TEXTO CON BRILLO */
+
 .glow-text {
     text-shadow: 0 0 10px #8b5cf6, 0 0 20px #4f46e5;
 }
@@ -147,13 +147,13 @@ footer {
     color: #cbd5f5;
 }
 
-/* FOOTER */
+
 .gamer-footer {
     background: linear-gradient(90deg, #0f172a, #1e293b, #312e81);
     color: #e5e7eb;
 }
 
-/* LINKS */
+
 .footer-link {
     color: #c7d2fe;
     text-decoration: none;
@@ -164,7 +164,7 @@ footer {
     color: #8b5cf6;
 }
 
-/* LÍNEA */
+
 .footer-line {
     border-color: rgba(255,255,255,0.1);
 }
@@ -181,13 +181,13 @@ footer {
     transform: scale(1.05);
 }
 
-/* MÁS ESPACIO ENTRE ELEMENTOS */
+
 .process-card {
     height: 100%;
     padding: 15px;
 }
 
-/* TÍTULOS MÁS LIMPIOS */
+
 h2 {
     font-size: 2rem;
 }
@@ -196,28 +196,28 @@ h5 {
     color: #c7d2fe;
 }
 
-/* MEJORAR TEXTO */
+
 p {
     color: #d1d5db;
 }
 
-/* IMAGEN MEJOR POSICIONADA */
+
 .hero-img {
     max-width: 100%;
 }
 
-/* Glow pro para el título */
+
 .glow-text {
     text-shadow: 0 0 5px #0d6efd, 0 0 10px #0d6efd, 0 0 20px #0d6efd;
 }
 
-/* Card estilo gamer */
+
 .gamer-card {
     border: 2px solid #0d6efd;
     box-shadow: 0 0 15px rgba(13,110,253,0.6);
 }
 
-/* Inputs modernos */
+
 input.form-control {
     border-radius: 0.5rem;
     box-shadow: inset 0 0 5px rgba(0, 6, 59, 0.349);
@@ -229,25 +229,25 @@ input.form-control:focus {
     box-shadow: 0 0 8px rgba(13,110,253,0.6);
 }
 
-/* Reducir espacio vertical entre navbar y footer */
+
 main {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-/* HERO */
+
 .hero {
     background: linear-gradient(135deg, #312e81, #4f46e5, #8b5cf6);
     border-radius: 20px;
     color: white;
 }
 
-/* Glow para títulos */
+
 .glow-text {
     text-shadow: 0 0 10px #8b5cf6, 0 0 20px #4f46e5;
 }
 
-/* CARD GAMER */
+
 .gamer-card {
     background: #1e293b;
     color: #e5e7eb;
@@ -261,7 +261,7 @@ main {
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
-/* INPUTS */
+
 .input-gamer {
     background-color: #1b1b1b;
     color: #fff;
@@ -283,7 +283,7 @@ main {
     color: #fff;
 }
 
-/* COLOR PICKER */
+
 .color-picker {
     width: 60px;
     height: 40px;
@@ -291,12 +291,12 @@ main {
     border: 2px solid #666;
 }
 
-/* CHECKBOX */
+
 .check-gamer:checked {
     accent-color: #8b5cf6;
 }
 
-/* BOTONES */
+
 .btn-gradient {
     background: linear-gradient(135deg, #4f46e5, #8b5cf6);
     color: white;
@@ -315,19 +315,19 @@ main {
     text-shadow: 0 0 5px #8b5cf6, 0 0 10px #4f46e5;
 }
 
-/* BODY GENERAL */
+
 body {
     background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
     font-family: 'Segoe UI', sans-serif;
     color: #e5e7eb;
 }
 
-/* FLEX PARA CHECKBOXES */
+
 .form-check {
     cursor: pointer;
 }
 
-/* TABLA ESTILO GAMER */
+
 .gamer-table {
     border: 2px solid #8b5cf6;
     border-radius: 15px;
