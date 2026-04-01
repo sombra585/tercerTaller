@@ -218,15 +218,26 @@ p {
 }
 
 
-input.form-control {
-    border-radius: 0.5rem;
-    box-shadow: inset 0 0 5px rgba(0, 6, 59, 0.349);
+.input-gamer {
+    background: linear-gradient(135deg, rgba(64, 76, 245, 0.15), rgba(93, 41, 216, 0.075));
+    color: #e5e7eb;
+    border: 1px solid rgba(139,92,246,0.4);
+    border-radius: 0.6rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
-input.form-control:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 8px rgba(13,110,253,0.6);
+.input-gamer::placeholder {
+    color: #c7d2fe;
+    opacity: 0.7;
+}
+
+.input-gamer:focus {
+    outline: none;
+    border-color: #a78bfa;
+    box-shadow: 0 0 10px rgba(139,92,246,0.6);
+    background: linear-gradient(135deg, rgba(79,70,229,0.25), rgba(139,92,246,0.25));
 }
 
 
@@ -352,3 +363,4 @@ body {
     transform: scale(1.02);
     transition: all 0.2s;
 }
+
