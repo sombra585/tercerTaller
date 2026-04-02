@@ -25,29 +25,32 @@ class PersonajeController extends Controller
 
     // ==================================================================
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'nombre' => 'required|string|max:50',
-            'clase' => 'required|string|in:Guerrero,Mago,Arquero,Asesino,Sanador',
-            'raza' => 'required|string|in:Humano,Elfo,Enano,Orco,Goblin',
-            'estatura' => 'required|integer|min:50|max:300',
-            'habilidades' => 'required|array|min:1|max:3',
-            'habilidades.*' => 'string|in:Fuerza,Magia,Sigilo,Arquería',
-            'historia' => 'required|string|max:1000',
-        ]);
+{
+    $validated = $request->validate([
+        'nombre' => 'required|string|max:50',
+        'clase' => 'required|string|in:Guerrero,Mago,Arquero,Asesino,Sanador',
+        'raza' => 'required|string|in:Humano,Elfo,Enano,Orco,Goblin',
+        'estatura' => 'required|integer|min:50|max:300',
+        'habilidades' => 'required|array|min:1|max:3',
+        'habilidades.*' => 'string|in:Fuerza,Magia,Sigilo,Arquería,Resistencia,Velocidad',
+        'historia' => 'required|string|max:1000',
+    ]);
 
-        Personaje::create([
-            'user_id' => Auth::id(),
-            'nombre' => $validated['nombre'],
-            'clase' => $validated['clase'],
-            'raza' => $validated['raza'],
-            'estatura' => $validated['estatura'],
-            'habilidades' => $validated['habilidades'],
-            'historia' => $validated['historia'],
-        ]);
+    Personaje::create([
+        'user_id' => Auth::id(),
+        'nombre' => $validated['nombre'],
+        'clase' => $validated['clase'],
+        'raza' => $validated['raza'],
+        'estatura' => $validated['estatura'],
+        'habilidades' => $validated['habilidades'],
+        'historia' => $validated['historia'],
+        'legendario' => $request->has('legendario'),
+        'villano' => $request->has('villano'),
+    ]);
 
-        return redirect()->route('mis.personajes')->with('success', 'Personaje creado correctamente.');
-    }
+    return redirect()->route('mis.personajes')
+        ->with('success', 'Personaje creado correctamente.');
+}
 
     public function registros()
 {

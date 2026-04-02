@@ -10,12 +10,22 @@ class Personaje extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'nombre', 'clase', 'raza', 'estatura', 'habilidades', 'historia'
-    ];
+    'user_id',
+    'nombre',
+    'clase',
+    'raza',
+    'estatura',
+    'habilidades',
+    'historia',
+    'legendario',
+    'villano'
+];
 
-    protected $casts = [
-        'habilidades' => 'array', // Convierte JSON a array automáticamente
-    ];
+protected $casts = [
+    'habilidades' => 'array',
+    'legendario' => 'boolean',
+    'villano' => 'boolean',
+];
 
     public function user() {
         return $this->belongsTo(User::class);

@@ -4,79 +4,75 @@
 
 <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
 
-
-
     <div class="col-md-6 col-lg-4">
-        <div class="card gamer-card shadow-lg p-4 rounded-4 bg-dark text-light">
 
-       
+        <div class="gamer-card p-4">
 
-            <div class="text-center mb-3">
-                <h2 class="fw-bold glow-text">🔑 Iniciar Sesión</h2>
-                <p class="small text-secondary">Accede a tu cuenta y empieza a crear personajes</p>
+            <!-- HEADER -->
+            <div class="text-center mb-4">
+                <h2 class="fw-bold glow-text">Iniciar Sesión</h2>
+                <p class="small">Accede a tu cuenta y empieza a crear personajes</p>
             </div>
 
-         
-
+            <!-- FORM -->
             <form method="POST" action="{{ route('login.post') }}">
                 @csrf
 
-            
-                
+                <!-- EMAIL -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo</label>
                     <input type="email"
-                           class="form-control bg-dark text-light border-secondary @error('email') is-invalid @enderror"
+                           class="input-gamer w-100 @error('email') is-invalid @enderror"
                            id="email"
                            name="email"
                            value="{{ old('email') }}"
                            required
                            autofocus
                            placeholder="tu@correo.com">
+
                     @error('email')
-                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                        <span class="text-danger small">{{ $message }}</span>
                     @enderror
                 </div>
 
-           
-                
+                <!-- PASSWORD -->
                 <div class="mb-3">
                     <label for="password" class="form-label">Contraseña</label>
                     <input type="password"
-                           class="form-control bg-dark text-light border-secondary @error('password') is-invalid @enderror"
+                           class="input-gamer w-100 @error('password') is-invalid @enderror"
                            id="password"
                            name="password"
                            required
                            placeholder="••••••••">
+
                     @error('password')
-                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                        <span class="text-danger small">{{ $message }}</span>
                     @enderror
                 </div>
 
-               
-
+                <!-- CHECK -->
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                    <input type="checkbox" class="form-check-input check-gamer" id="remember" name="remember">
                     <label class="form-check-label" for="remember">Recordarme</label>
                 </div>
 
-                
-
+                <!-- BUTTON -->
                 <div class="d-grid mb-3">
-                    <button type="submit" class="btn btn-primary fw-bold">
+                    <button type="submit" class="btn-gradient fw-bold">
                         Entrar
                     </button>
                 </div>
 
-                
-
-                <p class="text-center text-secondary small">
-                    ¿No tienes cuenta? 
-                    <a href="{{ route('registro') }}" class="text-primary fw-bold">Regístrate</a>
+                <!-- LINK -->
+                <p class="text-center small">
+                    ¿No tienes cuenta?
+                    <a href="{{ route('registro') }}" class="fw-bold footer-link">Regístrate</a>
                 </p>
 
             </form>
+
         </div>
+
     </div>
 
 </div>
