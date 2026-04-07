@@ -17,7 +17,6 @@ return new class extends Migration {
     $table->json('habilidades')->nullable();
     $table->text('historia')->nullable();
 
-    // 🔥 NUEVOS CAMPOS
     $table->boolean('legendario')->default(false);
     $table->boolean('villano')->default(false);
 

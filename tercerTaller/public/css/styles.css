@@ -121,9 +121,7 @@ p {
     transition: all 0.3s ease;
 }
 
-/* ❌ elimina el ::after completamente */
 
-/* ✅ nuevo hover limpio */
 .gamer-card:hover {
     transform: translateY(-6px);
     border-color: var(--primary);
